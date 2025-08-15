@@ -34,6 +34,9 @@ namespace UserService
                 app.UseSwaggerUI();
             }
 
+            // Run manual migration for Users table
+            Migrations.ManualMigration.Run(Configuration.GetConnectionString("DefaultConnection"));
+
             app.UseHttpsRedirection();
             app.UseRouting();
             app.UseAuthorization();
