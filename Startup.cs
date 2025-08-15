@@ -20,7 +20,6 @@ namespace UserService
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
             services.AddDbContext<UserDbContext>(options =>
                 options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
